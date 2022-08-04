@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Pangolin', cursive;
+    background-color: #00334e;
+    color: white;
+}
+
+main{
+    padding: 2rem 4rem;
+    text-align: center;
+}
+
+h1{
+    font-size: 4rem;
+}
+
+p{
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+}
