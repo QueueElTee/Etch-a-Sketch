@@ -72,3 +72,6 @@ eraseSketch.addEventListener('click', () => {
 
 createGrids(16);
 colorGrids(gridColor);
+
+
+// TODO: Look for an alternative for the 'mouseover event' so the site works on touch screen devices.
