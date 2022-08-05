@@ -7,7 +7,6 @@ const eraseSketch = document.querySelector('.erase-sketch');
 
 let gridColor = 'black';
 
-
 let createGrids = (gridValue) => {
     container.style.cssText = `grid-template-columns: repeat(${gridValue}, 1fr)`;
     for(let i = 0; i < gridValue ** 2; i++){
@@ -71,5 +70,5 @@ eraseSketch.addEventListener('click', () => {
 
 
 
-createGrids(10);
+createGrids(16);
 colorGrids(gridColor);

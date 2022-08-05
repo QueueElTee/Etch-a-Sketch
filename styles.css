@@ -36,37 +36,6 @@ input{
     cursor: pointer;
 }
 
-/* .slider{
-    -webkit-appearance: none;
-    background: #ff7800;
-}
-
-.slider::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    appearance: none;
-    background: #eb5424;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: #000000;
-    cursor: pointer;
-  }
-  
-.slider::-moz-range-thumb,
-.slider::-Chrome-range-thumb,
-.slider::-Opera-range-thumb,
-.slider::-Safari-range-thumb,
-.slider::-Edge-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: #2d364c;
-    cursor: pointer;
-} */
-
 #favcolor{
     border: 1px solid #b52e31;
 }
@@ -93,4 +62,29 @@ a:hover{
     margin-top: 2rem;
     background-color: #fff;
     display: grid;
+}
+
+
+/* TODO: Make site responsive */
+@media(max-width: 768px){
+    main{
+        padding: 1rem 2rem;
+    }
+
+    h1{
+        font-size: 2.5rem;
+    }
+    #container{
+        width: 100%;
+    }
+}
+
+@media(max-width: 465px){
+    main{
+        padding: 1rem;
+    }
+
+    p, a{
+        font-size: 1.15rem;
+    }
 }
