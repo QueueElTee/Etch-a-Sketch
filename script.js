@@ -1,4 +1,5 @@
 const container = document.querySelector('#container');
+const gridCount = document.querySelector('.grid-count');
 
 let createGrids = (gridValue) => {
     container.style.cssText = `grid-template-columns: repeat(${gridValue}, 1fr)`;
@@ -17,5 +18,6 @@ let colorGrids = (color) => {
     }));
 }
 
+
 createGrids(16);
-colorGrids('purple');
+colorGrids('black');
