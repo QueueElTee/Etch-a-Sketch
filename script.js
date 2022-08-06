@@ -25,14 +25,14 @@ let colorGrids = (color, event) => {
 }
 
 
-const checkDeviceType = () => {  
+let determineEvent = () => {
     if(('ontouchstart' in window) ||  (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)){
-        colorGrids(gridColor, 'touchstart');
+        return 'touchstart';
     }
     else {
-        colorGrids(gridColor, 'mouseover');
+        return 'mouseover';
     }
-} 
+}
 
 
 let clearGrids = () => {
@@ -46,13 +46,13 @@ slider.oninput = function(){
     gridCountText.textContent = `${gridCount} x ${gridCount}`;
     clearGrids();
     createGrids(gridCount);
-    checkDeviceType();
+    colorGrids(gridColor, determineEvent());
 }
 
 
 colorPicker.addEventListener('change', (e) => {
     gridColor = e.target.value;
-    checkDeviceType();
+    colorGrids(gridColor, determineEvent());
 });
 
 
@@ -70,7 +70,7 @@ let getRandomColor = () => {
 
 randomColor.addEventListener('click', () => {
     const grids = document.querySelectorAll('#container div');
-    grids.forEach(grid => grid.addEventListener('mouseover', () => grid.style.backgroundColor = getRandomColor()));
+    grids.forEach(grid => grid.addEventListener(determineEvent(), () => grid.style.backgroundColor = getRandomColor()));
 });
 
 
@@ -82,7 +82,4 @@ eraseSketch.addEventListener('click', () => {
 
 
 createGrids(16);
-checkDeviceType();
-
-
-// TODO: Look for an alternative for the 'mouseover event' so the site works on touch screen devices. 
+colorGrids(gridColor, determineEvent());
