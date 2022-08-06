@@ -27,7 +27,7 @@ let colorGrids = (color, event) => {
 
 const checkDeviceType = () => {  
     if(('ontouchstart' in window) ||  (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)){
-        colorGrids(gridColor, 'touchmove');
+        colorGrids(gridColor, 'touchstart');
     }
     else {
         colorGrids(gridColor, 'mouseover');
