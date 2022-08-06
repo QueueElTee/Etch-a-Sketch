@@ -17,12 +17,23 @@ let createGrids = (gridValue) => {
 }
 
 
-let colorGrids = (color) => {
+let colorGrids = (color, event) => {
     const grids = document.querySelectorAll('#container div');
-    grids.forEach(grid => grid.addEventListener('mouseover', () => {
+    grids.forEach(grid => grid.addEventListener(event, () => {
         grid.style.cssText = `background-color: ${color}`;
     }));
 }
+
+
+const checkDeviceType = () => {  
+    if(('ontouchstart' in window) ||  (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)){
+        colorGrids(gridColor, 'touchmove');
+    }
+    else {
+        colorGrids(gridColor, 'mouseover');
+    }
+} 
+
 
 let clearGrids = () => {
     const grids = document.querySelectorAll('#container div');
@@ -35,13 +46,13 @@ slider.oninput = function(){
     gridCountText.textContent = `${gridCount} x ${gridCount}`;
     clearGrids();
     createGrids(gridCount);
-    colorGrids(gridColor);
+    checkDeviceType();
 }
 
 
 colorPicker.addEventListener('change', (e) => {
     gridColor = e.target.value;
-    colorGrids(gridColor);
+    checkDeviceType();
 });
 
 
@@ -71,7 +82,7 @@ eraseSketch.addEventListener('click', () => {
 
 
 createGrids(16);
-colorGrids(gridColor);
+checkDeviceType();
 
 
-// TODO: Look for an alternative for the 'mouseover event' so the site works on touch screen devices.
+// TODO: Look for an alternative for the 'mouseover event' so the site works on touch screen devices. 
