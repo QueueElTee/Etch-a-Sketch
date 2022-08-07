@@ -62,10 +62,10 @@ a:hover{
     margin-top: 2rem;
     background-color: #fff;
     display: grid;
+    cursor: url('cursor/pencil-icon.png'), auto;
 }
 
 
-/* TODO: Make site responsive */
 @media(max-width: 768px){
     main{
         padding: 1rem 2rem;
